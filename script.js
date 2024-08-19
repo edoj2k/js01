@@ -1,22 +1,29 @@
-let person = {
-    firstname: 'John',
-    lastname: 'Smith',
-    age: 27, 
-    daughter: {
-        name: 'Mary',
-        age: 5
-    },
-    myFunc: function(par) {
-        console.log(par.daughterName + ' is a daughter of ' + par.fatherName + ' and she is ' + par.daughterAge + ' years old');
+function digitalClock() {
+    let date = new Date();
+    let hours = date.getHours() + '';
+    let minutes = date.getMinutes() + '';
+    let seconds = date.getSeconds() + '';
+    let day = date.getDay();
+
+    if(hours.length < 2) {
+        hours = '0' + hours;
     }
-};
 
-console.log(person);
-console.log(person.daughter.name);
+    if(minutes.length < 2) {
+        minutes = '0' + minutes;
+    }
 
-// person.myFunc(person.daughter.name, person.firstname, person.daughter.age);
-person.myFunc({
-    daughterName: 'Jessy',
-    fatherName: 'Michael',
-    daughterAge: 5
-})
+    if (seconds.length < 2) {
+        seconds = '0' + seconds;
+    }
+
+    let weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    let clock = weekDays[day] + ' ' + hours + ':' + minutes + ':' +seconds;
+
+    document.getElementById('clock').innerHTML = clock;
+
+}
+
+digitalClock();
+setInterval(digitalClock, 1000)
