@@ -25,18 +25,13 @@ console.log(el.innerHTML = '<h1>Hello</h1>');
 console.log(el.textContent = '<h1>Hello</h1>');
 */
 
-let icons = document.getElementsByClassName('fa');
+let lis = document.querySelectorAll('li, h2, #hide-list');
 
-Array.from(icons).forEach(function(icon, index, arr) {
-    console.log(icon, index, arr);
-});
-
-let lis = document.getElementsByTagName('li');
 console.log(lis);
 
-
-
-
+Array.from(lis).forEach(function(li) {
+    li.textContent = 'hello world';
+})
 
 
 
