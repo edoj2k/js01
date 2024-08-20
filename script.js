@@ -1,26 +1,49 @@
-let firstname = 'Bob'
+// Lecture: Get And Manipulate On Individual Elements - Part 1
 
-let per = {
-    firstname: 'John',
-    lastname: 'Smith',
-    getFullname: function() {
-        let that = this;
-        console.log(this === per);
-        console.log(this.firstname + ' ' + this.lastname);
-``
-        function greet() {
-            console.log('Hi ' + that.firstname);
-        }
-        greet();
-    }
+/*
+console.log(document.getElementById('list'));
+
+var el = document.getElementById('list');
+console.log(el);
+console.log(typeof el);
+
+// var el = document.getElementById('LIST');
+// console.log(el);
+
+console.log(el.textContent);
+console.log(el.textContent = 'Hello');
+
+var heading = document.getElementById('heading').textContent;
+console.log(heading);
+
+var ulElement = document.getElementById('list');
+console.log(ulElement.textContent = heading);
+
+console.log(el.innerHTML);
+console.log(el.innerHTML = 'Hello');
+console.log(el.innerHTML = '<h1>Hello</h1>');
+console.log(el.textContent = '<h1>Hello</h1>');
+*/
+
+let icons = document.getElementsByClassName('fa');
+
+for(let i = 0; i < icons.length; i++) {
+    console.log(icons[i]);
 }
 
-let per1 = {
-    firstname: 'Nick',
-    lastname: 'Doe'
-}
+console.log(icons);
 
-per1.getFullname = per.getFullname;
+let iconsArr = Array.from(icons);
+console.log(iconsArr);
 
-per.getFullname();
-per1.getFullname();
+icons.push('hello');
+
+console.log(icons);
+
+
+
+
+
+
+
+
