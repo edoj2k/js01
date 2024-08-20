@@ -25,13 +25,13 @@ console.log(el.innerHTML = '<h1>Hello</h1>');
 console.log(el.textContent = '<h1>Hello</h1>');
 */
 
-let lis = document.querySelectorAll('li, h2, #hide-list');
+// let lis = document.querySelectorAll('li, h2, #hide-list');
 
-console.log(lis);
+// console.log(lis);
 
-Array.from(lis).forEach(function(li) {
-    li.textContent = 'hello world';
-})
+// Array.from(lis).forEach(function(li) {
+//     li.textContent = 'hello world';
+// })
 
 
 
