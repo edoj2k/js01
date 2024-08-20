@@ -27,19 +27,12 @@ console.log(el.textContent = '<h1>Hello</h1>');
 
 let icons = document.getElementsByClassName('fa');
 
-for(let i = 0; i < icons.length; i++) {
-    console.log(icons[i]);
-}
+Array.from(icons).forEach(function(icon, index, arr) {
+    console.log(icon, index, arr);
+});
 
-console.log(icons);
-
-let iconsArr = Array.from(icons);
-console.log(iconsArr);
-
-icons.push('hello');
-
-console.log(icons);
-
+let lis = document.getElementsByTagName('li');
+console.log(lis);
 
 
 
