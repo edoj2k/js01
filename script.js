@@ -1,34 +1,9 @@
-// let div = document.querySelector('div.wrapper');
-// let header = document.querySelector('header');
-// let h2 = document.querySelector('header h2');
+let btn = document.getElementById('add-btn');
+let input = document.getElementById('add-input');
 
-// div.addEventListener('click', function(){
-//     let delay = new Date().getTime() + 1000;
-//     while(new Date() < delay) {}
-//     console.log('From div');
-// }, true);
+btn.addEventListener('click', function(e) {
+    e.preventDefault();
 
-// header.addEventListener('click', function(){
-//     let delay = new Date().getTime() + 1000;
-//     while(new Date() < delay) {}
-//     console.log('From header');
-// }, true);
-
-// h2.addEventListener('click', function(){
-//     let delay = new Date().getTime() + 1000;
-//     while(new Date() < delay) {}
-//     console.log('From h2');
-// }, true);
-
-let h2 = document.querySelector('header h2');
-
-h2.addEventListener('click', function() {
-    console.log('From click event');
+    input.setAttribute('type', 'submit');
+    input.setAttribute('value', input.value);
 });
-
-function a() {
-    let delay = new Date().getTime() + 3000;
-    while(new Date() < delay) {}
-    console.log('From function a');
-}
-a();
