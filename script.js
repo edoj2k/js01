@@ -1,21 +1,35 @@
-function Person(firstname, lastname) {
-    this.firstname = firstname;
-    this.lastname = lastname;
-    // this.getFullName = function() {
-    //     return this.firstname + ' ' + this.lastname;
-    // }
+let firstProto = {
+    sayHello: function() {
+        return 'hello ' + this.name;
+    }
 }
 
-Person.prototype.getFullName = function() {
-    return this.firstname + ' ' + this.lastname;
-}
+let john = Object.create(firstProto, {
+    name: {
+        value: 'John'
+    }
+});
 
-Person.prototype.greet = 'Hello from greet';
+console.log(john);
 
-let person1 = new Person('John', 'Smith');
-person1.greet = 'hello from person1 object';
+let secondProto = Object.create(firstProto, {
+    sayHi: {
+        value: function() {
+            return 'Hi ' + this.name;
+        }
+    }
+})
 
-let person2 = new Person('Nick', 'Doe');
+console.log(secondProto);
 
-console.log(person1.getFullName());
-console.log(person2.getFullName());
+let bob = Object.create(secondProto, {
+    name: {
+        value: 'Bob'
+    }
+});
+
+console.log(bob);
+
+let obj = Object.create(null);
+
+console.log(obj);
