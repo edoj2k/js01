@@ -1,35 +1,20 @@
-let firstProto = {
-    sayHello: function() {
-        return 'hello ' + this.name;
+let scores = [55, 35, 87, 45];
+
+function checkResult(arr, fn) {
+    let newArr = [];
+    for(let i = 0; i < arr.length; i++) {
+        newArr.push(fn(arr[i]));
     }
+    return newArr;
 }
 
-let john = Object.create(firstProto, {
-    name: {
-        value: 'John'
-    }
-});
+function passOrFail(score) {
+    return score >= 51;
+}
 
-console.log(john);
+function calcDifference(score) {
+    return score - 51;
+}
 
-let secondProto = Object.create(firstProto, {
-    sayHi: {
-        value: function() {
-            return 'Hi ' + this.name;
-        }
-    }
-})
-
-console.log(secondProto);
-
-let bob = Object.create(secondProto, {
-    name: {
-        value: 'Bob'
-    }
-});
-
-console.log(bob);
-
-let obj = Object.create(null);
-
-console.log(obj);
+console.log(checkResult(scores, passOrFail));
+console.log(checkResult(scores, calcDifference));
