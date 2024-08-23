@@ -1,10 +1,25 @@
-(function(name) {
-    console.log('hello ' + name);
-}('john'));
+// function calc(num1) {
+//     let num2  = 10;
+    
+//     return function(num3) {
+//         let sum = num1 + num2 + num3;
+//         console.log(sum);
+//     }
+// }
 
-let a = function() {
-    console.log('hi');
-    return 'hello';
-}();
+// let add = calc(5);
 
-console.log(a);
+// console.log(add);
+// add(15);
+
+function a() {
+    let arr = [];
+    for(let i = 0; i < 3; i++) {
+        arr.push((function() {
+            console.log(i);
+        })());
+    }
+    return arr;
+}
+
+a();
