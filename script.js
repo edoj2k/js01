@@ -1,23 +1,10 @@
-function finalResult(score) {
-    if(score >= 81) {
-        return function(name) {
-            console.log(name + ', you passed an exam and you are student of state university');
-        }
-    } else if (score >= 51) {
-        return function(name) {
-            console.log(name + ', you passed an exam and you are student of state collage');
-        }
-    } else {
-        return function(name) {
-            console.log(name + ', you failed');
-        }
-    }
-}
+(function(name) {
+    console.log('hello ' + name);
+}('john'));
 
-let result1 = finalResult(77);
-result1('john');
+let a = function() {
+    console.log('hi');
+    return 'hello';
+}();
 
-let result2 = finalResult(44);
-result2('jane');
-
-finalResult(96)('mary');
+console.log(a);
