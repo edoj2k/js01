@@ -1,25 +1,12 @@
-let person = {
-    firstname: 'John',
-    lastname: 'Smith',
-    fullname: function() {
-        return this.firstname + ' ' + this.lastname;
+let xmlhttp = new XMLHttpRequest();
+
+xmlhttp.open("GET", "./users.json", true);
+
+xmlhttp.onload = function() {
+    if(this.status == 200) {
+        let myData = JSON.parse(this.responseText);
+        console.log(myData);
     }
-};
+}
 
-let nick = {
-    firstname: 'Nick',
-    lastname: 'Doe'
-};
-
-console.log(person.fullname.call(nick));
-
-let definePerson = function(age, job) {
-    console.log(this.fullname() + ' is ' + age + ' years old and he is a ' + job);
-};
-
-definePerson.call(person, 28, 'developer');
-definePerson.apply(person, [30, 'designer']);
-
-let getPerson = definePerson.bind(person, 19);
-getPerson('student');
-getPerson('driver');
+xmlhttp.send();
