@@ -1,21 +1,11 @@
-/*************************
- **** QUIZ CONTROLLER ****
- *************************/
-let quizController = (function() {
+let names = ['Alex', 'Mary', 'Nick', 'Jane'];
 
-    //* Question Constructor */
-})();
+for(let i = 0; i < names.length; i++) {
+    console.log('The name is ' + names[i]);
+}
 
+console.log('-------------');
 
-/*************************
- **** UI CONTROLLER ****
- *************************/
-let UIController = (function() {
-
-})();
-
-/*************************
- **** CONTROLLER ****
- *************************/
-let controller = (function(quizCtrl, UICtrl) {
-})(quizController, UIController);
+names.forEach(function(name) {
+    console.log('The name is ' + name);
+});
