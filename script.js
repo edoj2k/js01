@@ -1,34 +1,30 @@
-let numbers = [1, 2, 3, 4, 5];
+let persons = [
+    {name: 'Mary', gender: 'female'},
+    {name: 'John', gender: 'male'},
+    {name: 'Jane', gender: 'female'},
+    {name: 'Bob', gender: 'male'},
+];
 
-let newArr = [];
+let males = [];
 
-for(let i = 0; i< numbers.length; i++) {
-    newArr.push(numbers[i] * 10);
+for(let i = 0; i < persons.length; i++) {
+    if(persons[i].gender == 'male') {
+        males.push(persons[i]);
+    }
 }
 
-console.log(numbers);
-console.log(newArr);
+console.log(persons);
+console.log(males);
 
-console.log('--------------');
+console.log('----------');
 
-let mapArr = numbers.map(function(number) {
-    return number * 10;
-});
+let females = persons.filter(function(person) {
+    return person.gender == 'female';
+})
 
-console.log(numbers);
-console.log(mapArr);
-
-console.log('-----------');
-
-let persons = [
-    {firstname: 'John', lastname: 'Smith'},
-    {firstname: 'Bob', lastname: 'Brown'},
-    {firstname: 'Nick', lastname: 'Doe'},
-]
-
-let getFirstNames = persons.map(function(person) {
-    return person.firstname;
-});
+// let females = persons.find(function(person) {
+//     return person.gender == 'female';
+// })
 
 console.log(persons);
-console.log(getFirstNames);
+console.log(females);
