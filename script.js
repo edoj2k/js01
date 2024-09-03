@@ -1,41 +1,30 @@
-let numbers = [100, 200, 300];
+// const name = 'John';
 
-let sum = 0;
+// let age = 28;
 
-for(let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-}
+// let profession = 'Instructor';
 
-console.log(sum);
+// function personES5() {
+//     console.log('My name is ' + name + ', I am ' + age + ' years old and I am ' + profession);
+// }
 
-console.log('-----------');
+// personES5();
 
-let total = numbers.reduce(function(previous, number) {
-    return previous + number;
-}, 0);
+// function personES6() {
+//     return `My name is ${name}, I'm ${age} years old and I'm ${profession}`;
+// }
 
-console.log(total);
+// personES6();
 
-console.log('----------');
+// function experience(company1, company2) {
+//     console.log(`${personES6()}. I have ${company1 + company2} years of experience in programming`);
+// }
 
-let weeklyEarnings = [750, 642, 823, 1456];
+// experience(4, 7);
 
-let income = weeklyEarnings.reduce(function(previous, weeklyEarnings) {
-    return previous + weeklyEarnings;
-}, 5000);
+let greet = 'Hello my dear student';
 
-
-console.log(income);
-
-console.log('-------------');
-
-let firstnames = ['John', 'Jane', 'Mary'];
-
-let lastnames = ['smith', 'brown', 'doe'];
-
-let fullnames = firstnames.reduce(function(previous, firstnames, index) {
-    previous.push(firstnames + ' ' + lastnames[index]);
-    return previous;
-}, []);
-
-console.log(fullnames);
+console.log(greet.startsWith('Hello'));
+console.log(greet.endsWith('ent'));
+console.log(greet.includes('dear'));
+console.log(greet.repeat(3));
