@@ -1,30 +1,37 @@
 let persons = [
-    {name: 'Mary', gender: 'female'},
-    {name: 'John', gender: 'male'},
-    {name: 'Jane', gender: 'female'},
-    {name: 'Bob', gender: 'male'},
+    {name: 'John', age: 28},
+    {name: 'Mary', age: 10},
+    {name: 'Nick', age: 25},
+    {name: 'Jane', age: 40},
 ];
 
-let males = [];
+let everyPersonCanVote = true;
+
+let onlySomePersonsCanVote = false;
 
 for(let i = 0; i < persons.length; i++) {
-    if(persons[i].gender == 'male') {
-        males.push(persons[i]);
+    if(persons[i].age < 18) {
+        everyPersonCanVote = false;
+        onlySomePersonsCanVote = true;
     }
 }
 
-console.log(persons);
-console.log(males);
+console.log('Every person can vote - ' + everyPersonCanVote);
 
-console.log('----------');
+console.log('Only some persons can vote - ' + onlySomePersonsCanVote);
 
-let females = persons.filter(function(person) {
-    return person.gender == 'female';
-})
+let x = 0;
 
-// let females = persons.find(function(person) {
-//     return person.gender == 'female';
-// })
+// let every = persons.every(function(person) {
+//     console.log(++x + ' - ' + (person.age >= 18));
+//     return person.age >= 18;
+// });
 
-console.log(persons);
-console.log(females);
+// console.log(every);
+
+let some = persons.some(function(person) {
+    console.log(++x + ' - ' + (person.age <= 18));
+    return person.age <= 18;
+});
+
+console.log(some);
