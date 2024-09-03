@@ -1,37 +1,41 @@
-let persons = [
-    {name: 'John', age: 28},
-    {name: 'Mary', age: 10},
-    {name: 'Nick', age: 25},
-    {name: 'Jane', age: 40},
-];
+let numbers = [100, 200, 300];
 
-let everyPersonCanVote = true;
+let sum = 0;
 
-let onlySomePersonsCanVote = false;
-
-for(let i = 0; i < persons.length; i++) {
-    if(persons[i].age < 18) {
-        everyPersonCanVote = false;
-        onlySomePersonsCanVote = true;
-    }
+for(let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
 }
 
-console.log('Every person can vote - ' + everyPersonCanVote);
+console.log(sum);
 
-console.log('Only some persons can vote - ' + onlySomePersonsCanVote);
+console.log('-----------');
 
-let x = 0;
+let total = numbers.reduce(function(previous, number) {
+    return previous + number;
+}, 0);
 
-// let every = persons.every(function(person) {
-//     console.log(++x + ' - ' + (person.age >= 18));
-//     return person.age >= 18;
-// });
+console.log(total);
 
-// console.log(every);
+console.log('----------');
 
-let some = persons.some(function(person) {
-    console.log(++x + ' - ' + (person.age <= 18));
-    return person.age <= 18;
-});
+let weeklyEarnings = [750, 642, 823, 1456];
 
-console.log(some);
+let income = weeklyEarnings.reduce(function(previous, weeklyEarnings) {
+    return previous + weeklyEarnings;
+}, 5000);
+
+
+console.log(income);
+
+console.log('-------------');
+
+let firstnames = ['John', 'Jane', 'Mary'];
+
+let lastnames = ['smith', 'brown', 'doe'];
+
+let fullnames = firstnames.reduce(function(previous, firstnames, index) {
+    previous.push(firstnames + ' ' + lastnames[index]);
+    return previous;
+}, []);
+
+console.log(fullnames);
