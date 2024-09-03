@@ -1,38 +1,15 @@
-// const numbers = [2, 4, 6, 8];
+const lis = document.getElementsByTagName('li');
 
-// let double = numbers.map(number => number * 2);
+// console.log(lis);
 
-// console.log(double);
+// Array.from(lis).forEach(li => {
+//     li.addEventListener('click', () => {
+//         li.classList.toggle('change');
+//     })
+// });
 
-// var personES5 = {
-//     firstname: 'Nick',
-//     lastname: 'Doe',
-//     sayFullName: function() {
-//         return function() {
-//             console.log(this.firstname + ' ' + this.lastname);
-//         }.bind(this);
-//      }
-// }
-
-// personES5.sayFullName()();
-
-var personES6 = {
-    firstname: 'Nick',
-    lastname: 'Doe',
-    sayFullName: function() {
-        return () => {
-            console.log(`${this.firstname} ${this.lastname}`);
-        };
-     }
+for(let li of lis) {
+    li.addEventListener('click', () => {
+        li.classList.toggle('change');
+    })
 }
-
-personES6.sayFullName()();
-
-document.querySelector('h1').addEventListener('click', function() {
-    console.log(this);
-
-    let a = () => {
-        this.style.color = 'red';
-    }
-    a();
-});
