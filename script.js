@@ -1,15 +1,6 @@
-const lis = document.getElementsByTagName('li');
+function person(firstname = 'John', lastname = 'Smith', profession = 'Programmer') {
 
-// console.log(lis);
-
-// Array.from(lis).forEach(li => {
-//     li.addEventListener('click', () => {
-//         li.classList.toggle('change');
-//     })
-// });
-
-for(let li of lis) {
-    li.addEventListener('click', () => {
-        li.classList.toggle('change');
-    })
+    console.log(`I am ${firstname} ${lastname} and I am ${profession}`);
 }
+
+person('Nick', 'Doe', 'Instructor');
