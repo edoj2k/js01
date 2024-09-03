@@ -1,15 +1,21 @@
-// const a = (x, y, ...rest) => {
-//     console.log(rest);
+// const arr = [10, 20, 30, 40, 50, 60];
 
-//     console.log(x + y + rest[0] + rest[1]);
-// }
+// const [ten, twenty, ...items] = arr;
 
-// a(10, 20, 30, 40);
+// console.log(ten,twenty, ...items);
 
-const family = (lastname, ...names) => {
-    names.forEach(name => {
-        console.log(`${name} ${lastname}`);
-    });
-};
+const person = {
+    firstname: 'John', 
+    lastname: 'Smith',
+    age: 30
+}
 
-family('Smith', 'Nick', 'Jane', 'Bob', 'Julia');
+// const {firstname, lastname} = person;
+
+// console.log(firstname,lastname);
+
+const aboutMe = ({firstname, lastname, age}) => {
+    console.log(`I am ${firstname} ${lastname} and I am ${age} years old.`);
+}
+
+aboutMe(person);
