@@ -1,35 +1,15 @@
-// const numbers1 = [1, 2, 3, 4];
+// const a = (x, y, ...rest) => {
+//     console.log(rest);
 
-// const numbers2 = [5, 6, 7, 8];
+//     console.log(x + y + rest[0] + rest[1]);
+// }
 
-// let numbers3 = [];
+// a(10, 20, 30, 40);
 
-// numbers3 = numbers3.concat(numbers1);
+const family = (lastname, ...names) => {
+    names.forEach(name => {
+        console.log(`${name} ${lastname}`);
+    });
+};
 
-// numbers3.push(10);
-
-// numbers3 = numbers3.concat(numbers2);
-
-// const numbers4 = [10, ...numbers1, 20, ...numbers2, 30];
-
-// console.log(numbers3);
-// console.log(numbers4);
-
-// let names = ['Jane', 'Bob', 'Alex', 'Ann'];
-
-// let namesCopy = [...names];
-
-// names.push('John');
-
-// console.log(names);
-
-// console.log(namesCopy);
-
-function sum(x, y, z) {
-    console.log(x + y + z);
-}
-
-let numbers = [10, 20, 30];
-
-// sum.apply(null, numbers);
-sum(...numbers);
+family('Smith', 'Nick', 'Jane', 'Bob', 'Julia');
