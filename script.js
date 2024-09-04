@@ -1,21 +1,37 @@
-// const arr = [10, 20, 30, 40, 50, 60];
+// const mapData = new Map([
+//     [10, 'ten'],
+//     ['isMarried', false]
+// ]);
 
-// const [ten, twenty, ...items] = arr;
+// mapData.set('name', 'John');
 
-// console.log(ten,twenty, ...items);
+// mapData.set(true, 'Yes');
 
-const person = {
-    firstname: 'John', 
-    lastname: 'Smith',
-    age: 30
+// const obj = {};
+
+// mapData.set(obj, 'person');
+
+// mapData.clear();
+// mapData.delete(10);
+// console.log(mapData.has(obj));
+// console.log(mapData.get('name'));
+// console.log(mapData);
+// console.log(mapData.size);
+
+// mapData.forEach((value, key) => {
+//     console.log(value, key);
+// });
+
+// for (let [key, value] of mapData.entries()) {
+//     console.log([key, value]);
+// }
+
+const setData = new Set(['John', 10, false, {firstname: 'Bob'}, 'John']);
+
+setData.add('Nick');
+
+console.log(setData.size);
+
+for(let value of setData.entries()) {
+    console.log(value);
 }
-
-// const {firstname, lastname} = person;
-
-// console.log(firstname,lastname);
-
-const aboutMe = ({firstname, lastname, age}) => {
-    console.log(`I am ${firstname} ${lastname} and I am ${age} years old.`);
-}
-
-aboutMe(person);
