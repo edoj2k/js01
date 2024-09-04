@@ -1,37 +1,75 @@
-// const mapData = new Map([
-//     [10, 'ten'],
-//     ['isMarried', false]
-// ]);
-
-// mapData.set('name', 'John');
-
-// mapData.set(true, 'Yes');
-
-// const obj = {};
-
-// mapData.set(obj, 'person');
-
-// mapData.clear();
-// mapData.delete(10);
-// console.log(mapData.has(obj));
-// console.log(mapData.get('name'));
-// console.log(mapData);
-// console.log(mapData.size);
-
-// mapData.forEach((value, key) => {
-//     console.log(value, key);
-// });
-
-// for (let [key, value] of mapData.entries()) {
-//     console.log([key, value]);
-// }
-
-const setData = new Set(['John', 10, false, {firstname: 'Bob'}, 'John']);
-
-setData.add('Nick');
-
-console.log(setData.size);
-
-for(let value of setData.entries()) {
-    console.log(value);
+function PersonES5(firstname, lastname, age) {
+  this.firstname = firstname;
+  this.lastname = lastname;
+  this.age = age;
 }
+
+PersonES5.prototype.aboutPerson = function () {
+  console.log(
+    `My name is ${this.firstname} ${this.lastname} and I am ${this.age} years old`
+  );
+};
+
+function DeveloperES5(firstname, lastname, age, experience, projects) {
+  PersonES5.call(this, firstname, lastname, age);
+  this.experience = experience;
+  this.projects = projects;
+}
+
+DeveloperES5.prototype = Object.create(PersonES5.prototype);
+
+DeveloperES5.prototype.aboutDev = function () {
+  console.log(
+    `My name is ${this.firstname} ${this.lastname}, I am ${this.age} years old with ${this.experience} years of experience and I have participated in ${this.projects} projects.`
+  );
+};
+
+const nickES5 = new PersonES5("Nick", "Smith", 28);
+
+const alexDev = new DeveloperES5("Alex", "Brown", 30, 10, 5);
+
+nickES5.aboutPerson();
+
+alexDev.aboutPerson();
+
+alexDev.aboutDev();
+
+console.log("--------------");
+
+class PersonES6 {
+  constructor(firstname, lastname, age) {
+    this.firstname = firstname;
+    this.lastname = lastname;
+    this.age = age;
+  }
+
+  aboutPerson() {
+    console.log(
+      `My name is ${this.firstname} ${this.lastname} and I am ${this.age} years old`
+    );
+  }
+}
+
+class DeveloperES6 extends PersonES6 {
+  constructor(firstname, lastname, age, experience, projects) {
+    super(firstname, lastname, age);
+    this.experience = experience;
+    this.projects = projects;
+  }
+
+  aboutDev() {
+    console.log(
+      `My name is ${this.firstname} ${this.lastname}, I am ${this.age} years old with ${this.experience} years of experience and I have participated in ${this.projects} projects.`
+    );
+  }
+}
+
+const nickES6 = new PersonES6("Nick", "Smith", 28);
+
+const bobDev = new DeveloperES6("Bob", "James", 40, 15, 7);
+
+nickES6.aboutPerson();
+
+bobDev.aboutDev();
+
+bobDev.aboutPerson();
